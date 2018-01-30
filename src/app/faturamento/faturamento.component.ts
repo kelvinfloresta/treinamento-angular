@@ -15,10 +15,7 @@ export class FaturamentoComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
     this.faturamentoInscricao = this.faturamentoService.getFaturamento()
-    .subscribe( dados => this.faturamento = dados, erro => {
-      
-      setTimeout( () => this.ngOnInit(), 1000 )
-    })
+    .subscribe( dados => this.faturamento = dados, erro => console.log(erro))
   }
 
   ngOnDestroy(){
